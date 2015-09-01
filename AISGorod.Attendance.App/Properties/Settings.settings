@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AISGorod.Attendance.App.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EmailBodyBegin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Список посещения на {0}.&lt;br&gt;&lt;br&gt;</Value>
+    </Setting>
+    <Setting Name="EmailBodyEnd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;br&gt;&lt;hr&gt;Подпись.</Value>
+    </Setting>
+    <Setting Name="EmailSubject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Список посещения на {0}</Value>
+    </Setting>
+    <Setting Name="EmailFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">from@localhost</Value>
+    </Setting>
+    <Setting Name="EmailFromName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fromName</Value>
+    </Setting>
+    <Setting Name="EmailTo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">to@localhost</Value>
+    </Setting>
+    <Setting Name="AuthServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="AuthName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">from@localhost</Value>
+    </Setting>
+    <Setting Name="AuthPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mypassword</Value>
+    </Setting>
+    <Setting Name="AuthPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="AuthUseSSL" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
