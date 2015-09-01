@@ -1,2 +1,2 @@
 language: csharp
-solution: AISGorod.Attendance.sln
+solution: AISGorod.Attendance.App/AISGorod.Attendance.App.csproj
