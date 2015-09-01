@@ -10,7 +10,7 @@ namespace AISGorod.Attendance.App
     public class DB
     {
         private IEnumerable<string> _data;
-        private const string FILE_NAME = "db.txt";
+        public const string FILE_NAME = "db.txt";
 
         public DB()
         {
@@ -24,7 +24,7 @@ namespace AISGorod.Attendance.App
             _data = File.ReadAllLines(FILE_NAME).ToList();
         }
 
-        public IEnumerable<EmployeeItem> GetList()
+        public IList<EmployeeItem> GetList()
         {
             List<EmployeeItem> result = new List<EmployeeItem>();
             foreach (var item in _data)
@@ -34,6 +34,7 @@ namespace AISGorod.Attendance.App
 
         public void Save(IEnumerable<EmployeeItem> list)
         {
+            if (list == null) return;
             File.WriteAllLines(FILE_NAME, list.Select(i => i.ToString()));
             _FillData();
         }

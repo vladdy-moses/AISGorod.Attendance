@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AISGorod.Attendance.App
 {
@@ -33,20 +32,13 @@ namespace AISGorod.Attendance.App
 
         public void Send(IEnumerable<EmployeeItem> list, DateTime date)
         {
-            try
-            {
-                _FormMessage(list, date);
-                _client.Send(_message);
-                MessageBox.Show("Письмо было успешно отправлено на указанный адрес.", "Отправка почты", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка отправки почты", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _FormMessage(list, date);
+            _client.Send(_message);
         }
 
         private void _FormMessage(IEnumerable<EmployeeItem> list, DateTime date)
         {
+            if (list == null) return;
             var s = Properties.Settings.Default;
 
             _message.Subject = string.Format(s.EmailSubject, date.ToShortDateString());

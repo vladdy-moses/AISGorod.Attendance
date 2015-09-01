@@ -53,7 +53,15 @@ namespace AISGorod.Attendance.App
         private void sendButton_Click(object sender, EventArgs e)
         {
             var service = new EmailService();
-            service.Send(db.GetList(), DateTime.Now);
+            try
+            {
+                service.Send(db.GetList(), DateTime.Now);
+                MessageBox.Show("Письмо было успешно отправлено на указанный адрес.", "Отправка почты", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка отправки почты", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
