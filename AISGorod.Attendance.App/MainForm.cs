@@ -23,14 +23,14 @@ namespace AISGorod.Attendance.App
         private void MainForm_Load(object sender, EventArgs e)
         {
             var employeeList = db.GetList();
-            int h = 10;
+            int h = 0;
             foreach (var item in employeeList)
             {
                 var control = new EmployeeControl(item);
-                control.Parent = this;
+                control.Parent = itemsPanel;
                 control.Top = h;
-                control.Left = 10;
-                control.Width = this.ClientSize.Width - 20;
+                control.Left = 0;
+                control.Width = itemsPanel.ClientSize.Width;
                 control.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right;
                 control.Changed += control_Changed;
                 control.Show();
@@ -38,6 +38,7 @@ namespace AISGorod.Attendance.App
                 controllsList.Add(control);
                 h += control.Height;
             }
+            this.Height = itemsPanel.Top + itemsPanel.Height + itemsPanel.Bottom + 10;
         }
 
         private void control_Changed(object sender, EventArgs e)
@@ -61,6 +62,14 @@ namespace AISGorod.Attendance.App
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка отправки почты", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            using (var form = new SettingsForm())
+            {
+                form.ShowDialog();
             }
         }
     }
