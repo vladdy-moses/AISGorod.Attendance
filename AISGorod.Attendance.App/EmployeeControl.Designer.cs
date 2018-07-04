@@ -51,7 +51,9 @@
             "На работе",
             "На работе (во время отпуска)",
             "В отпуске",
-            "На больничном"});
+            "В отпуске за свой счёт",
+            "На больничном",
+            "Уволен"});
             this.statusComboBox.Location = new System.Drawing.Point(222, 3);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(194, 21);
